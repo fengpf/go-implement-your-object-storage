@@ -1,11 +1,12 @@
 package heartbeat
 
 import (
-	"lib/rabbitmq"
 	"os"
 	"strconv"
 	"sync"
 	"time"
+
+	"go-object-storage/src/lib/rabbitmq"
 )
 
 var dataServers = make(map[string]time.Time)

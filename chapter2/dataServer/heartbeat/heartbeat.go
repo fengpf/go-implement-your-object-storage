@@ -1,9 +1,10 @@
 package heartbeat
 
 import (
-	"lib/rabbitmq"
 	"os"
 	"time"
+
+	"go-object-storage/src/lib/rabbitmq"
 )
 
 func StartHeartbeat() {

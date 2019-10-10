@@ -1,17 +1,17 @@
 package main
 
 import (
-	"./heartbeat"
-	"./locate"
-	"./objects"
 	"log"
 	"net/http"
-	"os"
+
+	"go-object-storage/chapter2/apiServer/heartbeat"
+	"go-object-storage/chapter2/apiServer/locate"
+	"go-object-storage/chapter2/apiServer/objects"
 )
 
 func main() {
 	go heartbeat.ListenHeartbeat()
 	http.HandleFunc("/objects/", objects.Handler)
 	http.HandleFunc("/locate/", locate.Handler)
-	log.Fatal(http.ListenAndServe(os.Getenv("LISTEN_ADDRESS"), nil))
+	log.Fatal(http.ListenAndServe("9000", nil))
 }

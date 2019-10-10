@@ -8,9 +8,12 @@ import (
 	"strings"
 )
 
+var (
+	filePath = "./storage/"
+)
+
 func put(w http.ResponseWriter, r *http.Request) {
-	f, e := os.Create(os.Getenv("STORAGE_ROOT") + "/objects/" +
-		strings.Split(r.URL.EscapedPath(), "/")[2])
+	f, e := os.Create(filePath + strings.Split(r.URL.EscapedPath(), "/")[2])
 	if e != nil {
 		log.Println(e)
 		w.WriteHeader(http.StatusInternalServerError)

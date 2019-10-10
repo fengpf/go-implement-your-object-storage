@@ -1,10 +1,11 @@
 package locate
 
 import (
-	"lib/rabbitmq"
 	"os"
 	"strconv"
 	"time"
+
+	"go-object-storage/src/lib/rabbitmq"
 )
 
 func Locate(name string) string {
